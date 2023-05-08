@@ -1,13 +1,150 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --themeColor: #ff4081;
+  --accent: #fffde7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0 0;
+}
+
+html
+{
+  -webkit-tap-highlight-color:transparent;
+}
+
+body {
+  background-color: var(--accent);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: min(20vh,100px);
+  margin-bottom: 10px;
+}
+
+.logo{
+  width: min(400px,90vw);
+}
+
+.tagline{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: min(3vw,15px);
+}
+
+.playground{
+  display: flex;
+  flex-grow: 1;
+  height: max(85vh, 500px);
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.letterbox{
+  height: min(50px,12vw);
+  width: min(50px,12vw);
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  transition: all 0.3s linear;
+}
+
+.empty{
+  color: black;
+  background-color: transparent;
+}
+
+.correct{
+  color: white;
+  background-color: green;
+}
+
+.wrong{
+  color: white;
+  background-color: #424242;
+}
+
+.misplaced{
+  color: white;
+  background-color: #ffab00;
+}
+
+.letters-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: min(1rem,1vw);
+  padding: 20px;
+  width: 80%;
+}
+.flex-row{
+  display: flex;
+  justify-content: center;
+  gap: min(1rem,1vw);
+}
+.keyboard{
+  display: flex;
+  flex-direction: column;
+  gap: min(2vw,1rem);
+  justify-content: center;
+  align-items: center;
+  padding: min(20px,10vw) min(20px,2vw) min(20px,5vw) min(20px,2vw);
+}
+.key{
+  background-color: #909090;
+  color: white;
+  font-size: min(25px,5vw);
+  padding: min(20px,2.5vw);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}
+
+.key:hover {
+  cursor: pointer;
+}
+
+.pop{
+  animation: bounce 0.4s ease-in-out;
+}
+
+.word-span{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@keyframes bounce {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
 }
